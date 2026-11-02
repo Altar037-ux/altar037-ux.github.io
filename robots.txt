@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://altar037-ux.github.io/sitemap.xml

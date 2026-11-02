@@ -1,0 +1,31 @@
+name: Vérification hebdomadaire du site
+
+on:
+  schedule:
+    # Chaque lundi à 06:00 UTC (08:00 à Paris en été)
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Lancer la vérification
+        run: python3 scripts/verifier_site.py --json rapport.json
+
+      - name: Garder le rapport
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapport-verification
+          path: rapport.json
+          retention-days: 90
