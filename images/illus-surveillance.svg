@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Illustration d’un bâtiment communal surveillé, avec son drapeau tricolore">
+  <rect width="240" height="160" rx="12" fill="#eef4fb"/>
+  <rect y="130" width="240" height="30" fill="#c9d6e8"/>
+  <!-- bâtiment communal -->
+  <rect x="50" y="50" width="140" height="80" fill="#0b3d7a"/>
+  <path d="M40 52 L120 18 L200 52 Z" fill="#003b7a"/>
+  <rect x="118" y="2" width="4" height="22" fill="#44506a"/>
+  <rect x="122" y="2" width="12" height="7" fill="#0055A4"/>
+  <rect x="122" y="9" width="12" height="7" fill="#ffffff"/>
+  <rect x="122" y="16" width="12" height="6" fill="#CE1126"/>
+  <g fill="#f5c542" opacity=".85">
+    <rect x="64" y="66" width="14" height="14"/>
+    <rect x="86" y="66" width="14" height="14"/>
+    <rect x="154" y="66" width="14" height="14"/>
+    <rect x="176" y="66" width="14" height="14"/>
+  </g>
+  <rect x="108" y="100" width="24" height="30" fill="#f5c542"/>
+  <!-- arbre -->
+  <rect x="210" y="104" width="5" height="26" fill="#6b4a2b"/>
+  <circle cx="212" cy="98" r="18" fill="#2e8b57"/>
+  <!-- borne -->
+  <rect x="32" y="112" width="8" height="18" rx="3" fill="#CE1126"/>
+</svg>

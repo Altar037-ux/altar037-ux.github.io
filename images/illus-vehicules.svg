@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-label="Illustration d’une voiture de police municipale et d’un scooter sur une route">
+  <rect width="1200" height="400" rx="16" fill="#eef4fb"/>
+  <rect y="300" width="1200" height="100" fill="#3a4658"/>
+  <rect y="300" width="1200" height="6" fill="#f5c542" opacity=".9"/>
+  <g fill="#ffffff" opacity=".7">
+    <rect x="40" y="350" width="80" height="6"/><rect x="200" y="350" width="80" height="6"/>
+    <rect x="360" y="350" width="80" height="6"/><rect x="520" y="350" width="80" height="6"/>
+    <rect x="680" y="350" width="80" height="6"/><rect x="840" y="350" width="80" height="6"/>
+    <rect x="1000" y="350" width="80" height="6"/>
+  </g>
+
+  <!-- scooter -->
+  <g transform="translate(120,16)">
+    <circle cx="90" cy="250" r="34" fill="#1a1a1a"/>
+    <circle cx="290" cy="250" r="34" fill="#1a1a1a"/>
+    <circle cx="90" cy="250" r="12" fill="#aab3c2"/>
+    <circle cx="290" cy="250" r="12" fill="#aab3c2"/>
+    <path d="M120 214 L130 160 Q136 140 166 140 L238 140 Q262 140 270 170 L276 214 Z" fill="#0055A4"/>
+    <rect x="110" y="214" width="170" height="16" rx="6" fill="#0b1f3a"/>
+    <rect x="140" y="180" width="110" height="6" fill="#ffffff"/>
+    <rect x="170" y="118" width="84" height="22" rx="10" fill="#111"/>
+    <path d="M96 240 L110 120" stroke="#44506a" stroke-width="10" stroke-linecap="round"/>
+    <path d="M96 116 L126 110" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="98" cy="118" r="9" fill="#ffe7a3"/>
+  </g>
+
+  <!-- voiture -->
+  <g transform="translate(560,70) scale(1.25)">
+    <ellipse cx="200" cy="186" rx="170" ry="8" fill="#000" opacity=".15"/>
+    <rect x="20" y="100" width="360" height="56" rx="18" fill="#f4f6fa" stroke="#9aa8be" stroke-width="2"/>
+    <rect x="20" y="130" width="360" height="12" fill="#0055A4"/>
+    <path d="M100 100 L140 56 L270 56 L316 100 Z" fill="#dfe6f1" stroke="#9aa8be" stroke-width="2"/>
+    <path d="M120 100 L150 66 L190 66 L190 100 Z M202 100 L202 66 L262 66 L290 100 Z" fill="#7f9bc4"/>
+    <rect x="176" y="40" width="48" height="10" rx="3" fill="#1d6fd1"/>
+    <text x="200" y="122" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#0b3d7a" text-anchor="middle">POLICE MUNICIPALE</text>
+    <rect x="20" y="110" width="8" height="14" rx="2" fill="#c8102e"/>
+    <circle cx="374" cy="118" r="6" fill="#ffe7a3"/>
+    <circle cx="100" cy="160" r="24" fill="#1a1a1a"/>
+    <circle cx="300" cy="160" r="24" fill="#1a1a1a"/>
+    <circle cx="100" cy="160" r="10" fill="#aab3c2"/>
+    <circle cx="300" cy="160" r="10" fill="#aab3c2"/>
+  </g>
+</svg>
