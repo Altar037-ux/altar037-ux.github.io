@@ -12,8 +12,11 @@
     <circle cx="470" cy="80" r="2"/><circle cx="600" cy="34" r="2.5"/><circle cx="740" cy="96" r="2"/>
     <circle cx="880" cy="44" r="2.5"/><circle cx="1010" cy="84" r="2"/><circle cx="1120" cy="36" r="2.5"/>
   </g>
-  <!-- « RF » en lettres grises à empattements, au centre -->
-  <text x="600" y="150" font-family="Georgia,'Times New Roman',serif" font-size="128" font-weight="700" fill="#c2c7d0" text-anchor="middle" letter-spacing="8">RF</text>
+  <!-- « FR » en lettres grises à empattements, décalées en hauteur -->
+  <g font-family="Georgia,'Times New Roman',serif" font-size="124" font-weight="700" fill="#c2c7d0" text-anchor="middle">
+    <text x="556" y="128">F</text>
+    <text x="646" y="168">R</text>
+  </g>
   <!-- rubans tricolores ondulés en bas -->
   <path d="M0 170 Q150 150 300 170 T600 170 T900 170 T1200 170 L1200 260 L0 260 Z" fill="#0055A4"/>
   <path d="M0 200 Q150 180 300 200 T600 200 T900 200 T1200 200 L1200 260 L0 260 Z" fill="#ffffff"/>
