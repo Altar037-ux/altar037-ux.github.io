@@ -670,7 +670,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1222;--card:#121d35;--ink:#e8edf7;--mute:#a3afc7;--line:#27365a;--tint:#16264a;--blue:#8fb0ff;--btn:#8fb0ff;--on-btn:#0a1222;--red:#ff6b7f;--on-red:#1a0a0e;--ok:#4cc88a;--ko:#ff8a80;--shadow:0 10px 30px rgba(0,0,0,.5);color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0a1222;--card:#121d35;--ink:#e8edf7;--mute:#a3afc7;--line:#27365a;--tint:#16264a;--blue:#8fb0ff;--btn:#8fb0ff;--on-btn:#0a1222;--red:#ff6b7f;--on-red:#1a0a0e;--ok:#4cc88a;--ko:#ff8a80;--shadow:0 10px 30px rgba(0,0,0,.5);color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif}
+body{margin:0;background:url(images/fond-page.svg) center top/cover fixed,var(--bg);color:var(--ink);font:17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background:linear-gradient(rgba(10,18,34,.62),rgba(10,18,34,.62)),url(images/fond-page.svg) center top/cover fixed,var(--bg)}}
+:root[data-theme="dark"] body{background:linear-gradient(rgba(10,18,34,.62),rgba(10,18,34,.62)),url(images/fond-page.svg) center top/cover fixed,var(--bg)}
 h1,h2,h3{font-family:"Bricolage Grotesque","Arial Narrow",sans-serif;line-height:1.15;margin:0;text-wrap:balance}
 .wrap{max-width:920px;margin:0 auto;padding-block:20px 60px;padding-inline:16px}
 button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
@@ -790,7 +792,8 @@ mark{background:color-mix(in srgb,var(--red) 22%,transparent);color:inherit;bord
 .illus-s{display:block;width:100%;max-width:240px;height:auto;margin:14px auto 22px;border-radius:10px}
 .illus-agent{max-width:170px;border-radius:0}
 /* bandeau illustré, entièrement visible, en haut de chaque rubrique (le texte commence dessous) */
-.wrap.page::before{content:"";display:block;aspect-ratio:1200/260;background:url(images/bandeau-ville.svg) center/100% 100% no-repeat;border-radius:14px 14px 0 0;margin:-20px -16px 22px}
+.wrap.page{background:var(--bg);border-radius:16px;box-shadow:var(--shadow);margin:16px auto;padding-inline:24px}
+.wrap.page::before{content:"";display:block;aspect-ratio:1200/260;background:url(images/bandeau-ville.svg) center/100% 100% no-repeat;border-radius:16px 16px 0 0;margin:-20px -24px 22px}
 .wrap.page.hub::before{background-image:url(images/bandeau-tricolore.svg)}
 .csearch{position:relative;max-width:560px}
 .cres{position:absolute;left:0;right:0;top:calc(100% - 22px);z-index:1000;margin:0;padding:6px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);max-height:320px;overflow:auto}
