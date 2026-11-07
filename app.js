@@ -53,6 +53,9 @@ var LV={
  moyen:{nom:'Moyen',sec:40,desc:'Articles, limites des pouvoirs, coordination.',idx:[2,5,6,7,8,11,15,31,35,37,39,41,42]},
  difficile:{nom:'Difficile',sec:30,desc:'Décrets, numéros de lois, détails précis.',idx:[4,9,10,13,14,16,17,33,34,36,43]},
  cas:{nom:'Cas pratiques',sec:50,desc:'Des situations de terrain : que peux-tu faire ?',idx:[22,23,24,25,26,27,28,29,30]},
+ pouvoirs:{nom:'Pouvoirs du maire',sec:40,desc:'Arrêtés, missions, pouvoirs de police du maire.',idx:[1,11,12,19,20,27,29,36,40,42]},
+ statut:{nom:'Statut et recrutement',sec:40,desc:'Agrément, formation, serment, grades, ASVP, gardes champêtres.',idx:[3,15,31,32,33,37,38,41,43,44]},
+ procedure:{nom:'Procédure pénale et APJA',sec:45,desc:'Garde à vue, contrôle d’identité, fouille, flagrant délit.',idx:[4,5,6,7,22,23,30,39]},
  mixte:{nom:'Tous niveaux',sec:35,desc:'Toutes les questions, dans le désordre.',idx:null}
 };
 var qb=document.getElementById('quizbox'),qi=0,sc=0,order=[],cur=null,curKey='',tm=null,wrong=[];
@@ -501,6 +504,27 @@ var TL=[
 ['21 nov. 2023','Réforme des carrières','Décrets 2023-1069 et 2023-1070 : carrières et grilles indiciaires.',J+'000048449061'],
 ['2025 – 2026','Projet de loi sur les polices municipales','Adopté par le Sénat (février 2026) et en commission à l’Assemblée (avril 2026) ; examen en séance reporté sans date en septembre 2026. Pas encore applicable.','https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53096']
 ];
+var SEEALSO={maire:[['articles','Textes de lois'],['quiz','Quiz']],missions:[['glossaire','Glossaire'],['quiz','Quiz']],flagrant:[['glossaire','Glossaire'],['redaction','Rédiger un PV']],identite:[['puisje','Est-ce que je peux… ?'],['quiz','Quiz']],route:[['infractions','Infractions courantes'],['puisje','Est-ce que je peux… ?']],arme:[['quiz','Quiz'],['glossaire','Glossaire']],deonto:[['metier','Le métier'],['quiz','Quiz']],coord:[['acteurs','Qui fait quoi ?'],['glossaire','Glossaire']]};
+function dkey(d){return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function renderDaily(){
+ var box=document.getElementById('dailyBox');if(!box||!Q.length)return;
+ var now=new Date(),key=dkey(now),yest=new Date(now.getFullYear(),now.getMonth(),now.getDate()-1);
+ var i=Math.floor(Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())/86400000)%Q.length,q=Q[i];
+ var st=store('daily')||{last:'',streak:0,answered:''};
+ var streak=(st.last===key||st.last===dkey(yest))?(st.streak||0):0;
+ box.innerHTML='';box.appendChild(el('h3',null,'Question du jour'));
+ box.appendChild(el('p','scount','Série en cours : '+streak+' jour'+(streak>1?'s':'')+' de suite avec une bonne réponse.'));
+ box.appendChild(el('p',null,q[0]));
+ var fb=el('p',null,'');fb.setAttribute('aria-live','polite');
+ function show(k){var ok=k===q[2];box.querySelectorAll('button').forEach(function(b){b.disabled=true});
+  var ns=ok?((st.last===dkey(yest))?streak+1:(st.last===key?streak:1)):streak;
+  if(ok&&st.last!==key)st.last=key;else if(!ok&&st.answered!==key){}
+  st.streak=ns;st.answered=key;store('daily',st);
+  fb.textContent=(ok?'Bonne réponse. ':'Pas tout à fait. La bonne réponse : '+q[1][q[2]]+'. ')+q[3];}
+ if(st.answered===key){box.appendChild(el('p',null,'Tu as déjà répondu aujourd’hui. Bonne réponse : '+q[1][q[2]]+'. '+q[3]));return}
+ var g=el('div','chips');q[1].forEach(function(t,k){var b=el('button','chip',t);b.type='button';b.onclick=function(){show(k)};g.appendChild(b)});
+ box.appendChild(g);box.appendChild(fb);
+}
 function renderFiches(){
  var nav=document.getElementById('ficheNav'),list=document.getElementById('ficheList');
  FICHES.forEach(function(f){
@@ -508,6 +532,7 @@ function renderFiches(){
   var d=el('article','box fiche');d.id='f-'+f.id;d.appendChild(el('h3',null,f.t));d.appendChild(favBtn('fiche',f.id,f.t));
   var ul=el('ul');f.p.forEach(function(x){ul.appendChild(el('li',null,x))});d.appendChild(ul);
   var w=el('div','links');f.l.forEach(function(x){w.appendChild(lk(x[0],x[1]))});d.appendChild(w);
+  var rel=SEEALSO[f.id];if(rel){var sa=el('p','links');sa.appendChild(el('span',null,'Voir aussi : '));rel.forEach(function(r){var a=el('a',null,r[1]);a.href='#'+r[0];a.setAttribute('data-go',r[0]);a.onclick=function(e){e.preventDefault();go(r[0])};sa.appendChild(a)});d.appendChild(sa)}
   var pr=el('button','go ghost noprint prbtn','Imprimer cette fiche');pr.type='button';pr.onclick=function(){d.classList.add('printme');document.body.classList.add('printing');window.print();setTimeout(function(){d.classList.remove('printme');document.body.classList.remove('printing')},500)};d.appendChild(pr);
   list.appendChild(d)});
 }
@@ -520,9 +545,9 @@ function renderGloss(q){
 }
 document.getElementById('gQ').addEventListener('input',function(e){renderGloss(e.target.value)});
 function renderTL(){var ol=document.getElementById('tlList');TL.forEach(function(t,i){var li=el('li',i===TL.length-1?'now':null);li.appendChild(el('span','tld',t[0]));li.appendChild(el('b',null,t[1]));li.appendChild(el('p',null,t[2]));if(t[3])li.appendChild(lk(t[3].indexOf('legifrance')>-1?'Lire sur Légifrance':'Dossier à l’Assemblée nationale',t[3]));ol.appendChild(li)})}
-renderFiches();renderGloss('');renderTL();
+renderFiches();renderGloss('');renderTL();renderDaily();
 /* recherche générale */
-var SQ=document.getElementById('sQ'),SR=document.getElementById('sRes'),SI=document.getElementById('sInfo');
+var SQ=document.getElementById('sQ'),SR=document.getElementById('sRes'),SI=document.getElementById('sInfo'),sFilter='tout';
 function sGroup(title,items){if(!items.length)return;SR.appendChild(el('h3',null,title+' ('+items.length+')'));var ul=el('ul','sres');items.slice(0,12).forEach(function(it){var li=el('li');var a=el('a',null,it[0]);a.href='#';a.onclick=function(e){e.preventDefault();it[2]()};li.appendChild(a);if(it[1])li.appendChild(el('small',null,it[1]));ul.appendChild(li)});SR.appendChild(ul);if(items.length>12)SR.appendChild(el('p','foot','… et '+(items.length-12)+' autres résultats. Précise ta recherche.'))}
 function runSearch(){
  if(!DATA_OK&&nrm(SQ.value.trim()).length>=2){ensureData(runSearch);return}
@@ -535,11 +560,14 @@ function runSearch(){
  var qz=Q.map(function(q,i){return[q,i]}).filter(function(x){return has(x[0][0]+' '+x[0][3])}).map(function(x){return[x[0][0],'Question de quiz',function(){go('quiz')}]});
  var tl=TL.filter(function(t){return has(t[0]+' '+t[1]+' '+t[2])}).map(function(t){return[t[1],t[0],function(){go('frise')}]});
  var co=search(raw).map(function(c){return[c[1],depName(c[2])+' ('+c[2]+')',function(){openCommune(c[0])}]});
- var tot=tx.length+fi.length+gl.length+qz.length+tl.length+co.length;
- SI.textContent=tot?tot+' résultat'+(tot>1?'s':'')+'.':'Aucun résultat pour « '+raw+' ».';
- sGroup('Textes de lois',tx);sGroup('Fiches mémo',fi);sGroup('Glossaire',gl);sGroup('Frise chronologique',tl);sGroup('Communes',co);sGroup('Quiz',qz);
+ var on=function(k){return sFilter==='tout'||sFilter===k};
+ var tx2=on('textes')?tx:[],fi2=on('fiches')?fi:[],gl2=on('glossaire')?gl:[],tl2=on('frise')?tl:[],co2=on('communes')?co:[],qz2=on('quiz')?qz:[];
+ var tot=tx2.length+fi2.length+gl2.length+qz2.length+tl2.length+co2.length;
+ SI.textContent=tot?tot+' résultat'+(tot>1?'s':'')+'.':'Aucun résultat pour « '+raw+' » dans cette catégorie.';
+ sGroup('Textes de lois',tx2);sGroup('Fiches mémo',fi2);sGroup('Glossaire',gl2);sGroup('Frise chronologique',tl2);sGroup('Communes',co2);sGroup('Quiz',qz2);
 }
 SQ.addEventListener('input',runSearch);
+document.querySelectorAll('[data-sf]').forEach(function(b){b.addEventListener('click',function(){sFilter=b.getAttribute('data-sf');document.querySelectorAll('[data-sf]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});runSearch()})});
 /* affichage : thème et taille du texte */
 var ROOT=document.documentElement;
 function setTheme(t){if(t==='auto')ROOT.removeAttribute('data-theme');else ROOT.setAttribute('data-theme',t);store('theme',t);document.querySelectorAll('[data-theme-btn]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-theme-btn')===t)})}

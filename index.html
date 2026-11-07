@@ -175,6 +175,7 @@
 
 <section id="quiz" class="wrap page" hidden>
 <h2>Quiz</h2>
+<div class="box" id="dailyBox" style="margin:0 0 20px"></div>
 <div id="quizbox"></div>
 </section>
 <section id="carte" class="page" hidden>
@@ -236,6 +237,8 @@
 <tr><td>B</td><td>Chefs de service de police municipale</td><td>Chef de service, principal de 2e classe, principal de 1re classe</td><td>Concours, niveau bac</td><td><a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000023896613" target="_blank" rel="noopener">Décret 2011-444 ↗</a></td></tr>
 <tr><td>A</td><td>Directeurs de police municipale</td><td>Directeur, directeur principal</td><td>Concours, niveau bac + 3</td><td><a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000819241" target="_blank" rel="noopener">Décret 2006-1392 ↗</a></td></tr>
 </table></div>
+<h3>Grades et échelons</h3>
+<ul><li><b>Le grade</b> est le rang du fonctionnaire dans son cadre d’emplois (par exemple gardien-brigadier, puis brigadier-chef principal). Il s’obtient par concours ou par avancement.</li><li><b>L’échelon</b> est un palier de progression à l’intérieur d’un grade. Il détermine le traitement de base : on passe d’un échelon au suivant, en général à l’ancienneté.</li><li><b>L’avancement de grade</b> (promotion) dépend de l’ancienneté, de l’examen professionnel ou de la liste d’aptitude, et du nombre de postes disponibles dans la collectivité.</li></ul><p class="foot">Les durées et conditions exactes figurent dans les décrets listés ci-dessus. Vérifie-les sur Légifrance avant de t’y fier pour un concours ou une promotion.</p>
 <h3>Le concours de gardien-brigadier</h3>
 <ul>
 <li><b>Externe :</b> au moins 18 ans, diplôme de niveau CAP-BEP ou équivalent (une expérience dans la sécurité peut être reconnue). Au moins la moitié des postes lui est réservée.</li>
@@ -268,6 +271,7 @@
 <h2>Rechercher dans tout le site</h2>
 <div class="search"><label for="sQ">Mot, article ou commune</label>
 <div class="sbox"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><input id="sQ" type="search" placeholder="Ex. : L. 511-1, armement, Nantes…" autocomplete="off"></div>
+<div class="chips" role="group" aria-label="Filtrer les résultats"><button type="button" class="chip" data-sf="tout" aria-pressed="true">Tout</button><button type="button" class="chip" data-sf="textes" aria-pressed="false">Textes de lois</button><button type="button" class="chip" data-sf="fiches" aria-pressed="false">Fiches mémo</button><button type="button" class="chip" data-sf="glossaire" aria-pressed="false">Glossaire</button><button type="button" class="chip" data-sf="quiz" aria-pressed="false">Quiz</button><button type="button" class="chip" data-sf="frise" aria-pressed="false">Frise</button><button type="button" class="chip" data-sf="communes" aria-pressed="false">Communes</button></div>
 <p class="scount" id="sInfo" aria-live="polite"></p></div>
 <div id="sRes"></div>
 </section>

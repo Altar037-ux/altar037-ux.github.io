@@ -10,7 +10,11 @@
 <meta property="og:description" content="Historique des mises à jour de La Police Municipale : nouvelles rubriques, corrections et améliorations du site.">
 <meta property="og:url" content="https://altar037-ux.github.io/nouveautes/">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://altar037-ux.github.io/og-image.png">
+<meta property="og:image" content="https://altar037-ux.github.io/nouveautes/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://altar037-ux.github.io/nouveautes/og.png">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192">
 <style>
@@ -25,10 +29,12 @@ a{color:var(--accent)}
 time{font-weight:700}
 ul{padding-left:20px}
 .back{display:inline-block;margin-top:24px}
+.skip{position:absolute;left:12px;top:-100px;z-index:100;background:#fff;color:#002654;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.3)}.skip:focus{top:12px}
 </style>
 </head>
 <body>
-<main>
+<a class="skip" href="#main">Aller au contenu</a>
+<main id="main" tabindex="-1">
 <p><a href="../">← Retour à l’accueil</a></p>
 <h1>Nouveautés du site</h1>
 <p>Les changements du site, du plus récent au plus ancien. Les dates sont celles de mise en ligne.</p>
@@ -39,6 +45,12 @@ ul{padding-left:20px}
 <li>Le site est plus léger et plus rapide : le CSS, le JavaScript et les polices sont chargés séparément, et la bibliothèque de carte seulement quand on ouvre la carte.</li>
 <li>Accessibilité : lien « Aller au contenu » pour le clavier, message clair si JavaScript est désactivé.</li>
 <li>Fond de l’accueil : illustration de ville et de policier à la place du bleu uni.</li>
+<li>Quiz : trois nouveaux niveaux par thème (pouvoirs du maire, statut et recrutement, procédure pénale et APJA).</li>
+<li>Une « question du jour » avec sa série de bonnes réponses, dans la section Quiz.</li>
+<li>Recherche : filtres par catégorie (textes, fiches, glossaire, quiz, frise, communes).</li>
+<li>Fiches mémo : liens « Voir aussi » vers les sections liées.</li>
+<li>Métier : explication des grades et des échelons.</li>
+<li>Sous-pages : lien « Aller au contenu », image de partage propre à chaque page.</li>
 </ul></div>
 
 <h2><time datetime="2026-11-02">2 novembre 2026</time></h2>
