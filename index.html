@@ -8,6 +8,7 @@
 <meta name="keywords" content="police municipale, réviser, concours gardien-brigadier, agent de police municipale, CGCT L2212-2, CSI L511-1, APJA, quiz police municipale, fiches de révision">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#002654">
+<link rel="preload" href="fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="canonical" href="https://altar037-ux.github.io/">
 <meta property="og:url" content="https://altar037-ux.github.io/">
 <meta property="og:type" content="website">
@@ -963,9 +964,9 @@ pre.model{white-space:pre-wrap;font:15px/1.6 "Atkinson Hyperlegible",sans-serif;
 .tgroup{margin:22px 0 4px;font-size:1rem;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
 @media print{body.printing-all main > section:not(#fiches){display:none!important}body.printing-all #fiches{display:block!important}body.printing-all #fiches > *:not(#ficheList){display:none!important}body.printing-all .fiche{break-inside:avoid;display:block!important}.star,.noprint{display:none!important}}
 
+.skip{position:absolute;left:12px;top:-100px;z-index:100;background:#fff;color:#002654;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.3)}.skip:focus{top:12px}
 @font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/atkinson-400.woff2) format("woff2")}
 @font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/atkinson-700.woff2) format("woff2")}
-@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bricolage-600.woff2) format("woff2")}
 @font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/bricolage-800.woff2) format("woff2")}
 
 /* ==== V13 ==== */
@@ -1036,6 +1037,8 @@ body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
 </style>
 
+<noscript><p style="padding:16px;margin:0;background:#fff3cd;color:#000;text-align:center">Ce site a besoin de JavaScript pour afficher ses rubriques, ses quiz et sa carte. Activez JavaScript dans votre navigateur pour continuer.</p></noscript>
+<a class="skip" href="#main" onclick="event.preventDefault();var m=document.getElementById('main');m.focus();m.scrollIntoView()">Aller au contenu</a>
 <header class="top">
 <div class="top-in">
 <a class="brand" href="#accueil" data-go="accueil"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-t"><span>La Police Municipale</span><small><span class="long">Site de révision </span>non officiel</small></span></a>
@@ -1057,7 +1060,7 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 </nav>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <section id="accueil">
 <div class="hero"><div class="hero-in">
 <div class="eyebrow"><b aria-hidden="true"><i></i><i></i><i></i></b>Révisions</div>
