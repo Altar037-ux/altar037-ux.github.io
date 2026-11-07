@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Illustration d’un procès-verbal de contravention avec un stylo">
+  <rect width="240" height="160" rx="12" fill="#eef4fb"/>
+  <!-- feuille PV -->
+  <rect x="58" y="22" width="112" height="128" rx="6" fill="#ffffff" stroke="#9aa8be" stroke-width="2"/>
+  <rect x="58" y="22" width="112" height="22" rx="6" fill="#0b3d7a"/>
+  <rect x="58" y="36" width="112" height="8" fill="#0b3d7a"/>
+  <text x="114" y="38" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">PV</text>
+  <g fill="#c9d6e8">
+    <rect x="72" y="58" width="84" height="6" rx="2"/><rect x="72" y="72" width="70" height="6" rx="2"/>
+    <rect x="72" y="86" width="84" height="6" rx="2"/><rect x="72" y="100" width="56" height="6" rx="2"/>
+  </g>
+  <!-- tampon rouge -->
+  <g transform="rotate(-12 130 124)">
+    <rect x="98" y="112" width="64" height="24" rx="4" fill="none" stroke="#CE1126" stroke-width="3"/>
+    <text x="130" y="129" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#CE1126" text-anchor="middle">35 €</text>
+  </g>
+  <!-- stylo -->
+  <g transform="rotate(35 196 92)">
+    <rect x="188" y="40" width="16" height="96" rx="6" fill="#0055A4"/>
+    <polygon points="188,136 204,136 196,152" fill="#f5c542"/>
+    <rect x="188" y="46" width="16" height="6" fill="#f5c542"/>
+  </g>
+</svg>

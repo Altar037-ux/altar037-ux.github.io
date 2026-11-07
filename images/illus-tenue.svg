@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Illustration d’une tenue de police municipale sur un cintre, avec son képi">
+  <rect width="240" height="160" rx="12" fill="#eef4fb"/>
+  <rect y="138" width="240" height="22" fill="#c9d6e8"/>
+  <!-- cintre -->
+  <path d="M120 40 Q120 26 132 26 Q144 26 144 38 Q144 46 132 50 L120 58" fill="none" stroke="#44506a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M120 58 L58 90 L62 96 L120 66 L178 96 L182 90 Z" fill="#44506a"/>
+  <!-- tunique -->
+  <path d="M88 66 L152 66 L166 128 L74 128 Z" fill="#1d4f91"/>
+  <path d="M120 66 L104 84 L120 96 L136 84 Z" fill="#e8edf5"/>
+  <rect x="78" y="112" width="84" height="6" fill="#e8edf5"/>
+  <rect x="134" y="84" width="10" height="14" rx="2" fill="#f5c542"/>
+  <!-- ceinture et badge -->
+  <rect x="86" y="98" width="68" height="5" fill="#0b1f3a"/>
+  <!-- képi posé à côté -->
+  <rect x="26" y="104" width="54" height="12" rx="4" fill="#0b1f3a"/>
+  <rect x="20" y="114" width="66" height="6" rx="3" fill="#0b1f3a"/>
+  <circle cx="53" cy="100" r="3.5" fill="#f5c542"/>
+  <!-- chaussures -->
+  <rect x="180" y="124" width="26" height="10" rx="4" fill="#111"/>
+  <rect x="206" y="124" width="26" height="10" rx="4" fill="#111"/>
+</svg>

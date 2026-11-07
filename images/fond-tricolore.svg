@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <rect width="1200" height="400" fill="#eef4fb"/>
+  <!-- trois bandes obliques douces : bleu, blanc, rouge -->
+  <path d="M640 -20 L820 -20 L1020 420 L840 420 Z" fill="#0055A4" opacity=".12"/>
+  <path d="M820 -20 L900 -20 L1100 420 L1020 420 Z" fill="#ffffff" opacity=".7"/>
+  <path d="M900 -20 L960 -20 L1160 420 L1100 420 Z" fill="#CE1126" opacity=".12"/>
+  <!-- filet de bas de page -->
+  <rect y="372" width="1200" height="28" fill="#0b3d7a" opacity=".08"/>
+</svg>
