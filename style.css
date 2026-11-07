@@ -787,7 +787,8 @@ mark{background:color-mix(in srgb,var(--red) 22%,transparent);color:inherit;bord
 .links a{font-weight:700}
 @media (max-width:640px){.missions{grid-template-columns:1fr}.dd{right:16px}}
 .illus{display:block;width:100%;max-width:640px;height:auto;margin:16px auto}
-.illus-s{width:auto;max-width:180px;height:auto}
+.illus-s{display:block;width:100%;max-width:240px;height:auto;margin:14px auto 22px;border-radius:10px}
+.illus-agent{max-width:170px;border-radius:0}
 
 .csearch{position:relative;max-width:560px}
 .cres{position:absolute;left:0;right:0;top:calc(100% - 22px);z-index:1000;margin:0;padding:6px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);max-height:320px;overflow:auto}
