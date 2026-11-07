@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-label="Bandeau illustré aux couleurs du drapeau tricolore">
+  <defs>
+    <linearGradient id="nuit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#002654"/>
+      <stop offset="1" stop-color="#0055A4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="260" fill="url(#nuit)"/>
+  <!-- étoiles -->
+  <g fill="#ffffff" opacity=".5">
+    <circle cx="90" cy="46" r="2.5"/><circle cx="210" cy="92" r="2"/><circle cx="330" cy="40" r="2.5"/>
+    <circle cx="470" cy="80" r="2"/><circle cx="600" cy="34" r="2.5"/><circle cx="740" cy="96" r="2"/>
+    <circle cx="880" cy="44" r="2.5"/><circle cx="1010" cy="84" r="2"/><circle cx="1120" cy="36" r="2.5"/>
+  </g>
+  <!-- grande étoile jaune -->
+  <polygon points="600,70 612,100 644,102 618,120 628,152 600,134 572,152 582,120 556,102 588,100" fill="#f5c542" opacity=".9"/>
+  <!-- rubans tricolores ondulés en bas -->
+  <path d="M0 170 Q150 150 300 170 T600 170 T900 170 T1200 170 L1200 260 L0 260 Z" fill="#0055A4"/>
+  <path d="M0 200 Q150 180 300 200 T600 200 T900 200 T1200 200 L1200 260 L0 260 Z" fill="#ffffff"/>
+  <path d="M0 226 Q150 206 300 226 T600 226 T900 226 T1200 226 L1200 260 L0 260 Z" fill="#CE1126"/>
+</svg>
