@@ -1041,10 +1041,12 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 /* Bande bleu-rouge sous l'accueil retirée à la demande ; l'en-tête garde le tricolore. */
 .flagline{display:none}
 
-/* ==== STYLE GABARIT : bandeaux des pages en dégradé bleu (sans vague) ==== */
-.wrap.page::before,.wrap.page.hub::before{background:linear-gradient(115deg,#06205e 0%,#0a3a8f 45%,#0a6ad8 100%);border-radius:14px 14px 0 0}
-:root[data-theme="dark"] .wrap.page::before,:root[data-theme="dark"] .wrap.page.hub::before{background:linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wrap.page::before,:root:not([data-theme="light"]) .wrap.page.hub::before{background:linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}}
+/* ==== STYLE GABARIT : bandeaux des pages en dégradé bleu, titre dedans, petite vague en bas ==== */
+.wrap.page::before,.wrap.page.hub::before{content:attr(data-title);display:flex;align-items:flex-end;aspect-ratio:auto;min-height:150px;box-sizing:border-box;padding:24px 28px 40px;color:#fff;font:800 clamp(1.7rem,4vw,2.4rem)/1.1 "Bricolage Grotesque","Arial Narrow",sans-serif;text-shadow:0 2px 12px rgba(0,20,60,.35);background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%2040'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,22%20C240,0%20480,0%20720,18%20C960,36%201200,34%201440,10%20L1440,40%20L0,40Z'%20fill='%23f3f5f9'/%3E%3C/svg%3E") center bottom/100% 24px no-repeat,linear-gradient(115deg,#06205e 0%,#0a3a8f 45%,#0a6ad8 100%);border-radius:14px 14px 0 0}
+.wrap.page:not([data-title])::before{display:none}
+.wrap.page[data-title] > h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:root[data-theme="dark"] .wrap.page::before,:root[data-theme="dark"] .wrap.page.hub::before{background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%2040'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,22%20C240,0%20480,0%20720,18%20C960,36%201200,34%201440,10%20L1440,40%20L0,40Z'%20fill='%230a1222'/%3E%3C/svg%3E") center bottom/100% 24px no-repeat,linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wrap.page::before,:root:not([data-theme="light"]) .wrap.page.hub::before{background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%2040'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,22%20C240,0%20480,0%20720,18%20C960,36%201200,34%201440,10%20L1440,40%20L0,40Z'%20fill='%230a1222'/%3E%3C/svg%3E") center bottom/100% 24px no-repeat,linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}}
 
 /* Boutons d'action : bleu plein, coins arrondis, ombre légère */
 .go:not(.ghost){border-color:transparent;border-radius:8px;font-weight:700;box-shadow:0 4px 12px rgba(10,40,100,.22)}
