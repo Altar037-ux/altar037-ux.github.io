@@ -1057,3 +1057,6 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 .tile{transition:transform .18s,box-shadow .18s}
 .tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,40,100,.14)}
 @media (prefers-reduced-motion:reduce){.tile{transition:none}.tile:hover{transform:none}}
+
+/* Téléphone : bandeau pleine largeur, sans coins arrondis */
+@media (max-width:700px){.wrap.page::before,.wrap.page.hub::before{border-radius:0}}
