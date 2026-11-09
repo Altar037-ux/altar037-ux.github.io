@@ -1041,7 +1041,17 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 /* Bande bleu-rouge sous l'accueil retirée à la demande ; l'en-tête garde le tricolore. */
 .flagline{display:none}
 
-/* ==== STYLE GABARIT : bandeau des pages (même dégradé et même vague que l'accueil) ==== */
-.wrap.page::before,.wrap.page.hub::before{background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%20160'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,96%20C260,30%20520,24%20760,78%20C1000,132%201200,118%201440,52%20L1440,160%20L0,160Z'%20fill='%234d86ec'/%3E%3Cpath%20d='M0,126%20C300,64%20560,66%20800,116%20C1040,166%201240,150%201440,94%20L1440,160%20L0,160Z'%20fill='%23f3f5f9'/%3E%3C/svg%3E") center bottom/100% 48% no-repeat,linear-gradient(115deg,#06205e 0%,#0a3a8f 45%,#0a6ad8 100%);border-radius:14px 14px 0 0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wrap.page::before,:root:not([data-theme="light"]) .wrap.page.hub::before{background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%20160'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,96%20C260,30%20520,24%20760,78%20C1000,132%201200,118%201440,52%20L1440,160%20L0,160Z'%20fill='%232d5fc4'/%3E%3Cpath%20d='M0,126%20C300,64%20560,66%20800,116%20C1040,166%201240,150%201440,94%20L1440,160%20L0,160Z'%20fill='%230a1222'/%3E%3C/svg%3E") center bottom/100% 48% no-repeat,linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}}
-:root[data-theme="dark"] .wrap.page::before,:root[data-theme="dark"] .wrap.page.hub::before{background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%20160'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,96%20C260,30%20520,24%20760,78%20C1000,132%201200,118%201440,52%20L1440,160%20L0,160Z'%20fill='%232d5fc4'/%3E%3Cpath%20d='M0,126%20C300,64%20560,66%20800,116%20C1040,166%201240,150%201440,94%20L1440,160%20L0,160Z'%20fill='%230a1222'/%3E%3C/svg%3E") center bottom/100% 48% no-repeat,linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}
+/* ==== STYLE GABARIT : bandeaux des pages en dégradé bleu (sans vague) ==== */
+.wrap.page::before,.wrap.page.hub::before{background:linear-gradient(115deg,#06205e 0%,#0a3a8f 45%,#0a6ad8 100%);border-radius:14px 14px 0 0}
+:root[data-theme="dark"] .wrap.page::before,:root[data-theme="dark"] .wrap.page.hub::before{background:linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wrap.page::before,:root:not([data-theme="light"]) .wrap.page.hub::before{background:linear-gradient(115deg,#06152f 0%,#0a2a66 45%,#0a4fa8 100%)}}
+
+/* Boutons d'action : bleu plein, coins arrondis, ombre légère */
+.go:not(.ghost){border-color:transparent;border-radius:8px;font-weight:700;box-shadow:0 4px 12px rgba(10,40,100,.22)}
+.go:not(.ghost):hover{filter:brightness(1.12)}
+
+/* Cartes : ombre douce et léger relief au survol */
+.box,.tile,.card,.cards > *{box-shadow:0 4px 14px rgba(10,40,100,.08)}
+.tile{transition:transform .18s,box-shadow .18s}
+.tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,40,100,.14)}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}.tile:hover{transform:none}}
