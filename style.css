@@ -1038,5 +1038,5 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 .btn.p:hover{background:#eef4ff}
 .btn.s{border-color:#fff}
 .hero-in{padding-bottom:140px}
-/* Bande sous l'accueil en bleu / rouge : la bande blanche disparaissait sur fond clair. L'en-tête garde le tricolore. */
-.flagline{background:linear-gradient(90deg,var(--f-blue) 50%,var(--f-red) 50%)}
+/* Bande bleu-rouge sous l'accueil retirée à la demande ; l'en-tête garde le tricolore. */
+.flagline{display:none}
