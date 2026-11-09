@@ -1063,10 +1063,10 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 
 /* Barre de rubriques toujours visible : on arrive à tout en un clic, sans ouvrir le menu. */
 .qnav{background:var(--card);border-bottom:1px solid var(--line);position:relative;z-index:1}
-.qnav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:920px;margin:0 auto;padding:8px 12px}
+.qnav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:8px 12px}
 .qnav a{padding:9px 14px;border-radius:8px;border:2px solid transparent;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
 .qnav a:hover{background:var(--tint)}
-.qnav a[aria-current=page]{background:var(--blue);color:#fff}
+.qnav a[aria-current=page]{background:var(--blue);color:var(--on-btn,#fff)}
 .qnav :focus-visible{outline:3px solid var(--red);outline-offset:2px}
 /* Menu : pages listées sous chaque rubrique. */
 .dd-sub{display:flex;flex-direction:column;margin:0 0 8px 14px;padding-left:8px;border-left:2px solid var(--line)}
