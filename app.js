@@ -984,6 +984,3 @@ buildSubnav();})();
 })();
 
 try{var h=location.hash.slice(1);if(/^[dc]-/.test(h))ensureData(function(){if(/^d-/.test(h)){if(PREF[h.slice(2)])openDep(h.slice(2))}else if(BYCODE[h.slice(2)])openCommune(h.slice(2))});else if(h)go(h)}catch(x){}
-
-/* Menu : les pages de chaque rubrique sont listées directement sous la rubrique. */
-(function(){Object.keys(GROUPS).forEach(function(g){var a=document.querySelector('#menuPanel a[data-go="'+g+'"]');if(!a)return;var u=document.createElement('div');u.className='dd-sub';GROUPS[g].p.forEach(function(y){var x=document.createElement('a');x.href='#'+y[0];x.setAttribute('data-go',y[0]);x.textContent=y[1];u.appendChild(x)});a.parentNode.insertBefore(u,a.nextSibling)})})();
