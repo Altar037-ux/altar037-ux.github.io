@@ -1038,3 +1038,6 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 .btn.p:hover{background:#eef4ff}
 .btn.s{border-color:#fff}
 .hero-in{padding-bottom:140px}
+/* Bandes bleu / rouge seulement : la bande blanche disparaissait sur fond clair */
+.top{border-image:linear-gradient(90deg,var(--f-blue) 50%,var(--f-red) 50%) 1}
+.flagline{background:linear-gradient(90deg,var(--f-blue) 50%,var(--f-red) 50%)}
