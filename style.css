@@ -1068,3 +1068,5 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 .qnav a[aria-current=page]{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.55)}
 .qnav :focus-visible{outline:3px solid #fff;outline-offset:2px}
 @media (max-width:640px){.qnav{gap:4px;padding:6px 8px}.qnav a{padding:8px 10px;font-size:.92rem}}
+/* Barre, accueil et bandeaux : même dégradé fixé à la fenêtre, pour qu'il n'y ait aucune cassure de couleur entre eux. */
+.qnav,.hero,.wrap.page::before,.wrap.page.hub::before{background-attachment:fixed}
