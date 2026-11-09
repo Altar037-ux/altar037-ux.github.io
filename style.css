@@ -1024,4 +1024,5 @@ input,textarea,[contenteditable],.mmbody,.mmbody img{-webkit-user-select:text;us
 #pmTop{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:60;font:inherit;font-weight:700;padding:10px 16px;border-radius:999px;border:2px solid #fff;background:#0b4fa0;color:#fff;cursor:pointer;box-shadow:0 0 0 3px #fff,0 4px 12px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .2s,background .2s,color .2s}
 #pmTop:hover,#pmTop:focus-visible{background:#ef4135;color:#fff;border-color:#0b4fa0;outline:none}
 #pmTop.on{opacity:1;pointer-events:auto}
+@media (max-width:700px){#pmTop.on.low{opacity:.3}#pmTop.on.low:hover,#pmTop.on.low:focus-visible{opacity:1}}
 @media print{#pmRead,#pmTop{display:none!important}}

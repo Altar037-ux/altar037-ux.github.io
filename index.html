@@ -648,9 +648,10 @@
     var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
     var p=max>0?(h.scrollTop||document.body.scrollTop)/max:0;
     bar.style.width=(Math.min(1,Math.max(0,p))*100)+'%';
-    var ft=document.querySelector('.sitefoot'), hide=false;
-    if(ft){hide=ft.getBoundingClientRect().top<window.innerHeight;}
-    btn.classList.toggle('on',(h.scrollTop||document.body.scrollTop)>600&&!hide);
+    var ft=document.querySelector('.sitefoot'), low=false;
+    if(ft){low=ft.getBoundingClientRect().top<window.innerHeight;}
+    btn.classList.toggle('on',(h.scrollTop||document.body.scrollTop)>600);
+    btn.classList.toggle('low',low);
   }
   window.addEventListener('scroll',upd,{passive:true});
   window.addEventListener('resize',upd);
