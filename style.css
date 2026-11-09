@@ -788,6 +788,8 @@ mark{background:color-mix(in srgb,var(--red) 22%,transparent);color:inherit;bord
 @media (max-width:640px){.missions{grid-template-columns:1fr}.dd{right:16px}}
 .illus{display:block;width:100%;max-width:640px;height:auto;margin:16px auto}
 .illus-s{display:block;width:100%;max-width:240px;height:auto;margin:14px auto 22px;border-radius:10px}
+.grades-ladder{display:block;width:100%;max-width:480px;height:auto;margin:14px auto 22px}
+.grades-ladder text{font:700 12px system-ui,sans-serif;text-anchor:middle}
 .illus-agent{max-width:170px;border-radius:0}
 /* bandeau illustré, entièrement visible, en haut de chaque rubrique (le texte commence dessous) */
 .wrap.page::before{content:"";display:block;aspect-ratio:1200/260;background:url(images/bandeau-ville.svg) center/100% 100% no-repeat;border-radius:14px 14px 0 0;margin:-20px -16px 22px}
